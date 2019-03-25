@@ -1,0 +1,121 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.circle {
+  background-color: lightskyblue;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.card-wrapper {
+  width: 240px;
+  height: 360px;
+  box-shadow: 0 5px 20px 5px rgba(0, 0, 0, 0.3);
+}
+
+.card-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(135deg, #81ffef 10%, #f067b4 100%);
+  color: white;
+  font-size: 2rem;
+}
+
+.demos {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  align-items: center;
+  justify-items: center;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 0;
+  text-decoration: none;
+  background: transparent;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.magnetic-btn {
+  box-sizing: content-box;
+  padding: 2rem;
+  width: 100px;
+  height: 100px;
+  display: block;
+  position: relative;
+}
+
+.magnetic-btn-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-border-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.btn-border {
+  width: 100%;
+  height: 100%;
+  fill: white;
+  stroke: rgba(35, 33, 44, 0.1);
+  stroke-width: 1;
+  transition: fill 0.3s ease-out;
+}
+
+.-active .btn-border {
+  animation: btn-border-rotate 10s linear infinite;
+}
+
+.-active .btn-border {
+  fill: black;
+}
+
+.btn-icon {
+  fill: black;
+  transition: fill 0.3s ease-out;
+}
+
+.-active .btn-icon {
+  fill: white;
+}
+
+@keyframes btn-border-rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
